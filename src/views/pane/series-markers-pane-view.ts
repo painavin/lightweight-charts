@@ -78,6 +78,14 @@ function fillSizeAndY(
 			offsets.belowBar += shapeSize + shapeMargin;
 			return;
 		}
+		case 'atPos': {
+			const atPrice = isNumber(marker.atPos) ? marker.atPos : inBarPrice;
+			rendererItem.y = priceScale.priceToCoordinate(atPrice, firstValue);
+			if (rendererItem.text !== undefined) {
+				rendererItem.text.y = rendererItem.y + halfSize + shapeMargin + textHeight * (0.5 + Constants.TextMargin) as Coordinate;
+			}
+			return;
+		}
 	}
 
 	ensureNever(marker.position);

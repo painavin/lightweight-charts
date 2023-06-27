@@ -3,8 +3,8 @@ import { ceiledEven, ceiledOdd } from '../helpers/mathex';
 import { SeriesMarkerShape } from '../model/series-markers';
 
 const enum Constants {
-	MinShapeSize = 12,
-	MaxShapeSize = 30,
+	MinShapeSize = 8,
+	MaxShapeSize = 20,
 	MinShapeMargin = 3,
 }
 
@@ -19,7 +19,7 @@ export function shapeSize(shape: SeriesMarkerShape, originalSize: number): numbe
 		case 'arrowUp':
 			return size(originalSize, 1);
 		case 'circle':
-			return size(originalSize, 0.8);
+			return size(originalSize, 0.7);
 		case 'square':
 			return size(originalSize, 0.7);
 	}
